@@ -1,0 +1,33 @@
+services:
+  app:
+    build: .
+    ports:
+      - 8080:80   # Apache
+      - 5173:5173 # Vite
+    volumes:
+      - .:/var/www/html:cached
+      - /var/www/html/node_modules
+    depends_on:
+      - db
+    networks:
+      - laravel
+
+  db:
+    image: mysql:5.7
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - laravel
+
+volumes:
+  dbdata:
+
+networks:
+  laravel:

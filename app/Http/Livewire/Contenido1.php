@@ -92,7 +92,7 @@ class Contenido1 extends Component
                 'articulos' => $this->articulos,
                 'categorias' => $categorias,
                 'marcas' => $marcas
-            ]);
+            ])->layout('layouts.app');
         } else {
             abort(404);
         }

@@ -20,6 +20,6 @@ class Categorias extends Component
     {
         return view('livewire.categorias', [
             'categorias' => $this->categorias
-        ]);
+        ])->layout('layouts.app');
     }
 }

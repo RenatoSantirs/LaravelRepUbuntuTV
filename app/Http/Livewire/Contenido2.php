@@ -57,7 +57,7 @@ class Contenido2 extends Component
         $user = auth()->user();
         // Verificar si el usuario tiene el rol de Administrador
         if ($user->hasRole('Administrator')) {
-            return view('livewire.contenido2', ['articulos' => $this->articulos]);
+            return view('livewire.contenido2', ['articulos' => $this->articulos])->layout('layouts.app');
         } else {
             abort(404);
         }

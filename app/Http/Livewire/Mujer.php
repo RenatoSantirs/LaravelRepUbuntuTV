@@ -71,7 +71,7 @@ class Mujer extends Component
         }
 
         $this->articulos = $query->paginate(5);
-        return view('livewire.mujer', ['articulos' => $this->articulos]);
+        return view('livewire.mujer', ['articulos' => $this->articulos])->layout('layouts.app');
     }
 
     public function updated($propertyName)

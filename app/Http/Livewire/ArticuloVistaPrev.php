@@ -11,7 +11,7 @@ class ArticuloVistaPrev extends Component
 {
     public function render()
     {
-        return view('livewire.articulo-vista-prev');
+        return view('livewire.articulo-vista-prev')->layout('layouts.app');
     }
 
     public $id_usuario, $imagen, $nombre_ape, $direccion, $id_articulo, $nom_articulo, $costo, $cantidad, $total, $cantidad_disponible ;

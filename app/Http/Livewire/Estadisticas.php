@@ -79,7 +79,7 @@ class Estadisticas extends Component
         // Ordenar el array asociativo por clave (fecha)
         ksort($ventas_pasadas);
 
-        return view('livewire.estadisticas', compact('chart', 'chart2', 'chart3', 'ventas', 'ventas_pasadas'));
+        return view('livewire.estadisticas', compact('chart', 'chart2', 'chart3', 'ventas', 'ventas_pasadas'))->layout('layouts.app');
     }
 
     public function predecirVentas()

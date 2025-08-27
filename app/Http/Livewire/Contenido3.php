@@ -44,7 +44,7 @@ class Contenido3 extends Component
 
         $this->articulos = $query->paginate(5);
 
-        return view('livewire.contenido3', ['articulos' => $this->articulos]);
+        return view('livewire.contenido3', ['articulos' => $this->articulos])->layout('layouts.app');
     }
 
 

@@ -21,7 +21,7 @@ class CrearAdminUser extends Component
         return view('livewire.crear-admin-user', [
             'users' => User::with('roles')->where('name', 'like', '%' . $this->search . '%')->paginate(10),
             'roles' => Role::all()
-        ]);
+        ])->layout('layouts.app');
     }
 
     public function create()

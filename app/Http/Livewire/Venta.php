@@ -29,6 +29,6 @@ class Venta extends Component
 
     public function render()
     {
-        return view('livewire.venta');
+        return view('livewire.venta')->layout('layouts.app');
     }
 }

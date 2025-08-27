@@ -19,6 +19,6 @@ class ArticuloController extends Controller
             ->where('nombre', $nombre)
             ->firstOrFail();
 
-        return view('articulos.' . $categoria . '.' . $id_articulo, ['articulo' => $articulo]);
+        return view('articulos.' . $categoria . '.' . $id_articulo, ['articulo' => $articulo])->layout('layouts.app');
     }
 }

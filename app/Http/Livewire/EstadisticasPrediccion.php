@@ -17,7 +17,7 @@ class EstadisticasPrediccion extends Component
 
         return view('livewire.estadisticas-prediccion', [
             'chart_data' => $chart_data,
-        ]);
+        ])->layout('layouts.app');
     }
 
     public function obtenerPredicciones(Request $request)
@@ -75,8 +75,12 @@ class EstadisticasPrediccion extends Component
 
     private function obtenerTop5Predicciones($predicted)
     {
-        $predictions = array_count_values($predicted);
+        $filtered = array_filter($predicted, fn($v) => is_string($v) || is_int($v));
+
+        $predictions = array_count_values($filtered);
         arsort($predictions);
-        return array_slice($predictions, 0, 5, true);
+        return array_slice($predictions, 0, 5, true);   
+        
     }
+    
 }

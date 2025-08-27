@@ -70,7 +70,7 @@ class Hombre extends Component
         }
 
         $this->articulos = $query->paginate(5);
-        return view('livewire.hombre', ['articulos' => $this->articulos]);
+        return view('livewire.hombre', ['articulos' => $this->articulos])->layout('layouts.app');
     }
 
     public function updated($propertyName)

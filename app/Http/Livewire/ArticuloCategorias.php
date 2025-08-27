@@ -82,7 +82,7 @@ class ArticuloCategorias extends Component
 
         $this->articulos = $query->where('categoria', $this->categoria)->paginate(9);
 
-        return view('livewire.articulo-categorias', ['articulos' => $this->articulos]);
+        return view('livewire.articulo-categorias', ['articulos' => $this->articulos])->layout('layouts.app');
     }
 
     public function updated($propertyName)

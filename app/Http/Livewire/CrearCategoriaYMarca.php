@@ -116,6 +116,6 @@ class CrearCategoriaYMarca extends Component
     }
     public function render()
     {
-        return view('livewire.crear-categoria-y-marca');
+        return view('livewire.crear-categoria-y-marca')->layout('layouts.app');
     }
 }

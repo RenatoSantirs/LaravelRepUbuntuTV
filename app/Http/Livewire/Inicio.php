@@ -74,7 +74,7 @@ class Inicio extends Component
         }
 
         $this->articulos = $query->paginate(9);
-        return view('livewire.inicio', ['articulos' => $this->articulos]);
+        return view('livewire.inicio', ['articulos' => $this->articulos])->layout('layouts.app');
     }
 
     public function updated($propertyName)

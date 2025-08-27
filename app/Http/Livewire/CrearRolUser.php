@@ -48,6 +48,6 @@ class CrearRolUser extends Component
     {
         return view('livewire.crear-rol-user', [
             'roles' => Role::all()
-        ]);
+        ])->layout('layouts.app');
     }
 }
